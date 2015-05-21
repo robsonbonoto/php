@@ -1,0 +1,7 @@
+# Turn on the rewrite engine
+Options + FollowSymlinks
+RewriteEngine on
+
+# Request routing, skip directories
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z_-]+)$ index.php?nome=$1 [L,NC,QSA]
